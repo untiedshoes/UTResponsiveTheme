@@ -1,0 +1,37 @@
+input[type="checkbox"] {
+    display:none;
+}
+
+input[type="checkbox"] + label {
+    color:#fff;
+    @include adjust-font-size-to( $p-font-size);
+    text-align: left;
+    @include pie-clearfix();
+}
+
+input[type="checkbox"] + label span {
+    display:inline-block;
+    width:28px;
+    height:28px;
+    margin:-1px 4px 0 100px;
+    vertical-align:middle;
+    background:url(images/icons/checkbox.gif) 0 0 no-repeat;
+    cursor:pointer;
+    float: right;
+}
+
+input[type="checkbox"]:checked + label span {
+    background:url(images/icons/checkbox.gif) 0 -28px no-repeat;
+}
+
+input[type="select"] + label {
+    color:$body-text-color;
+    @include adjust-font-size-to( $p-font-size);
+    text-align: left;
+    @include pie-clearfix();
+}
+
+input[type="select"] + label span {
+    display:inline-block;
+    float: right;
+}

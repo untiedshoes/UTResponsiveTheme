@@ -1,0 +1,58 @@
+//Colours
+.main-style-accent-bg {
+   background-color: #00b3cf; color: #fff;
+}
+.secondary-style-accent-bg {
+  background-color: #17181b; color: #fff;
+}
+
+.third-style-accent-bg {
+  background-color: #eaeaea; color: #fff;
+}
+
+.forth-style-accent-bg {
+  background-color: #323337;
+}
+
+.black-style-accent-bg {
+  background-color: #141516;
+}
+
+.light-grey-style-accent-bg {
+  background-color: #F7F7F7;
+}
+.medium-grey-style-accent-bg {
+  background-color: #ECECEC;
+}
+
+.plain-style-accent-bg {
+  background-color: #fff;
+}
+
+.section-block-white {
+    background: #fff;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #303133; }
+}
+.section-block-blue {
+    background: #00b3cf;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #fff; }
+}
+.section-block-light-grey {
+    background: #eaeaea;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #303133; }
+}
+.section-block-dark {
+    background: #17181b;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #fff; }
+}
+.section-block-black {
+    background: #141516;
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #fff; }
+}
+
+.light-container {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #303133; }
+}
+.dark-container {
+    h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, p { color: #fff; }
+}

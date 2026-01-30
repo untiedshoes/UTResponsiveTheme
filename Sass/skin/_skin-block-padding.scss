@@ -1,0 +1,946 @@
+//Horizontal Padding
+.no-top-padding {
+    padding-top: 0;
+}
+
+.no-bottom-padding {
+    padding-bottom: 0;
+}
+
+.no-top-margin {
+    margin-top: 0;
+}
+
+.no-bot-margin {
+    margin-bottom: 0;
+}
+
+.no-h-padding {
+    padding-left: 0;
+    padding-left: 0;
+}
+
+.no-v-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.no-v-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.no-h-margin {
+    margin-right: 0;
+    margin-left: 0;
+    border-left-width: 0;
+    border-left-style: none;
+}
+
+p-margin-top {
+    margin-top: 28px;
+}
+
+p-margin-bottom {
+    margin-bottom: 28px;
+}
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
+    .no-mobile-v-padding {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .no-mobile-h-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .no-mobile-padding {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+.single-block-padding {
+
+    @include breakpoint($mobile) {
+        padding: $desktop-gutter $desktop-gutter $desktop-gutter $desktop-gutter;
+    }
+
+    @include breakpoint($tablet) {
+        padding: $desktop-gutter $desktop-gutter $desktop-gutter $desktop-gutter;
+    }
+
+    @include breakpoint($desktop) {
+        padding: $desktop-gutter $desktop-gutter $desktop-gutter $desktop-gutter;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding: $desktop-gutter $desktop-gutter $desktop-gutter $desktop-gutter;
+    }
+}
+
+.double-block-padding {
+
+    @include breakpoint($mobile) {
+        padding: 30px;
+    }
+
+    @include breakpoint($tablet) {
+        padding: $desktop-gutter-double $desktop-gutter-double $desktop-gutter-double $desktop-gutter-double;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        padding: 54px 36px 54px 36px;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        padding: 72px 54px 75px 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding: 72px 54px 75px 54px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding: 72px 54px 75px 54px;
+    }
+}
+
+.triple-block-padding {
+    @include breakpoint($mobile) {
+        padding: 54px 36px 54px 36px;
+    }
+
+    @include breakpoint($tablet) {
+        padding: 54px 36px 54px 36px;
+    }
+
+    @include breakpoint($desktop) {
+        padding: 72px 54px 75px 54px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding: 108px 108px 108px 108px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding: 108px 108px 108px 108px;
+    }
+}
+
+.quintriple-block-padding {
+    @include breakpoint($mobile) {
+        padding: 54px 36px 54px 36px;
+    }
+
+    @include breakpoint($tablet) {
+        padding: 54px 36px 54px 36px;
+    }
+
+    @include breakpoint($desktop) {
+        padding: 72px 54px 75px 54px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding: 200px 200px 200px 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding: 200px 200px 200px 200px;
+    }
+}
+
+.quadruple-block-padding {
+    @include breakpoint($mobile) {
+        padding: 108px 36px 108px 36px;
+    }
+
+    @include breakpoint($tablet) {
+        padding: 108px 36px 108px 36px;
+    }
+
+    @include breakpoint($desktop) {
+        padding: 200px 54px 75px 200px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding: 200px 200px 200px 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding: 400px 400px 400px 400px;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        padding: 108px 36px 108px 36px;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        padding: 108px 36px 108px 36px;
+    }
+}
+
+.single-h-padding {
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.double-h-padding {
+
+    @include breakpoint($mobile) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-left: 54px;
+        padding-right: 54px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-left: 54px;
+        padding-right: 54px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-left: 54px;
+        padding-right: 54px;
+    }
+}
+
+.triple-h-padding {
+
+    @include breakpoint($mobile) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-left: 108px;
+        padding-right: 108px;
+    }
+}
+
+.quintriple-h-padding {
+
+    @include breakpoint($mobile) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
+//Vertical Padding
+.single-v-padding {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.double-v-padding {
+
+    @include breakpoint($mobile) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+}
+
+.triple-v-padding {
+
+    @include breakpoint($mobile) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-top: 108px;
+        padding-bottom: 108px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-top: 108px;
+        padding-bottom: 108px;
+    }
+
+    &.remove-triple-v-padding-small {
+        @include breakpoint($mobile) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+.quintriple-v-padding {
+
+    @include breakpoint($mobile) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-top: 54px;
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+}
+
+.single-top-padding {
+    padding-top: $desktop-gutter;
+}
+
+.double-top-padding {
+    padding-top: $desktop-gutter-double;
+}
+
+.triple-top-padding {
+    padding-top: 108px;
+}
+
+.quad-top-padding {
+    @include breakpoint($mobile) {
+        padding-top: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-top: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-top: 144px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-top: 144px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-top: 144px;
+    }
+}
+
+.quintriple-top-padding {
+    @include breakpoint($mobile) {
+        padding-top: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-top: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-top: 200px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-top: 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-top: 200px;
+    }
+}
+
+.single-bottom-padding {
+    padding-bottom: $desktop-gutter;
+}
+
+.double-bottom-padding {
+    padding-bottom: $desktop-gutter-double;
+}
+
+.triple-bottom-padding {
+
+    @include breakpoint($mobile) {
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-bottom: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-bottom: 108px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-bottom: 108px;
+    }
+}
+
+.quad-bottom-padding {
+
+    @include breakpoint($mobile) {
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-bottom: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-bottom: 144px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-bottom: 144px;
+    }
+}
+
+
+.quintriple-bottom-padding {
+
+    @include breakpoint($mobile) {
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-bottom: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-bottom: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-bottom: 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-bottom: 200px;
+    }
+}
+
+.single-h-padding-left {
+    padding-left: $desktop-gutter;
+}
+
+.double-h-padding-left {
+    padding-left: $desktop-gutter-double;
+}
+
+.triple-h-padding-left {
+
+    @include breakpoint($mobile) {
+        padding-left: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-left: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-left: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-left: 108px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-left: 108px;
+    }
+}
+
+.quad-h-padding-left {
+
+    @include breakpoint($mobile) {
+        padding-left: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-left: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-left: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-left: 144px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-left: 144px;
+    }
+}
+
+
+.quintriple-h-padding-left {
+
+    @include breakpoint($mobile) {
+        padding-left: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-left: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-left: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-left: 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-left: 200px;
+    }
+}
+
+.single-h-padding-right {
+    padding-right: 30px;
+}
+
+.double-h-padding-right {
+    padding-right: 54px;
+}
+
+.triple-h-padding-right {
+
+    @include breakpoint($mobile) {
+        padding-right: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-right: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-right: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-right: 108px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-right: 108px;
+    }
+}
+
+.quad-h-padding-right {
+
+    @include breakpoint($mobile) {
+        padding-right: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-right: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-right: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-right: 144px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-right: 144px;
+    }
+}
+
+
+.quintriple-h-padding-right {
+
+    @include breakpoint($mobile) {
+        padding-right: 54px;
+    }
+
+    @include breakpoint($tablet) {
+        padding-right: 54px;
+    }
+
+    @include breakpoint($desktop) {
+        padding-right: 72px;
+    }
+
+    @include breakpoint($desktop-wide) {
+        padding-right: 200px;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        padding-right: 200px;
+    }
+}
+
+.triple-right-padding {
+    padding-right: $desktop-gutter-triple;
+}
+//Horizontal Margin
+.single-h-margin {
+    margin-left: $desktop-gutter;
+    margin-right: $desktop-gutter;
+}
+
+.double-h-margin {
+    margin-left: $desktop-gutter-double;
+    margin-right: $desktop-gutter-double;
+}
+
+.triple-h-margin {
+    margin-left: $desktop-gutter-triple;
+    margin-right: $desktop-gutter-triple;
+}
+//Vertical Margin
+.single-v-margin {
+    margin-top: $desktop-gutter;
+    margin-bottom: $desktop-gutter;
+}
+
+.double-v-margin {
+    margin-top: $desktop-gutter-double;
+    margin-bottom: $desktop-gutter-double;
+}
+
+.triple-v-margin {
+    margin-top: $desktop-gutter-triple;
+    margin-bottom: $desktop-gutter-triple;
+}
+
+.single-v-margin-top {
+    margin-top: $desktop-gutter;
+}
+
+.double-v-margin-top {
+    margin-top: $desktop-gutter-double;
+}
+
+.triple-v-margin-top {
+    margin-top: $desktop-gutter-triple;
+}
+//Negative Vertical Margin
+.single-negative-v-margin {
+    margin-top: -$desktop-gutter !important;
+}
+
+.double-negative-v-margin {
+    @include breakpoint($mobile) {
+        margin-top: -20px !important;
+    }
+
+    @include breakpoint($tablet) {
+        margin-top: -25px !important;
+    }
+
+    @include breakpoint($desktop) {
+        margin-top: -$desktop-gutter-double !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-top: -$desktop-gutter-double !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-top: -$desktop-gutter-double !important;
+    }
+}
+
+.triple-negative-v-margin {
+    @include breakpoint($mobile) {
+        margin-top: -20px !important;
+    }
+
+    @include breakpoint($tablet) {
+        margin-top: -25px !important;
+    }
+
+    @include breakpoint($desktop) {
+        margin-top: -$desktop-gutter-triple !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-top: -$desktop-gutter-triple !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-top: -$desktop-gutter-triple !important;
+    }
+}
+//Negative Horizontal Margin
+.single-negative-h-margin-left {
+    margin-top: -36px !important;
+}
+
+.double-negative-h-margin-left {
+    margin-top: -54px !important;
+}
+
+.triple-negative-h-margin-left {
+    margin-top: -108px !important;
+}
+
+.quintriple-negative-h-margin-left {
+    margin-left: -216px !important;
+}
+
+.sextuple-negative-h-margin-left {
+    @include breakpoint($desktop) {
+        margin-left: -200px !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-left: -250px !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-left: -350px !important;
+    }
+
+    @include breakpoint($tablet) {
+        margin-left: -150px !important;
+    }
+
+    @include breakpoint($mobile) {
+        margin-left: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        margin-left: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        margin-left: 0;
+    }
+}
+
+.single-negative-h-margin-right {
+
+
+    @include breakpoint($desktop) {
+        margin-right: -36px !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-right: -36px !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-right: -36px !important;
+    }
+
+    @include breakpoint($tablet) {
+        margin-right: -36px !important;
+    }
+
+    @include breakpoint($mobile) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        margin-right: 0;
+    }
+}
+
+.double-negative-h-margin-right {
+
+    @include breakpoint($desktop) {
+        margin-right: -54px !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-right: -54px !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-right: -54px !important;
+    }
+
+    @include breakpoint($mobile) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        margin-right: 0;
+    }
+}
+
+.triple-negative-h-margin-right {
+
+
+    @include breakpoint($desktop) {
+        margin-right: -108px !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-right: -108px !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-right: -108px !important;
+    }
+
+    @include breakpoint($mobile) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        margin-right: 0;
+    }
+}
+
+.quintriple-negative-h-margin-right {
+
+
+    @include breakpoint($desktop) {
+        margin-right: -216px !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-right: -216px !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-right: -216px !important;
+    }
+
+    @include breakpoint($mobile) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        margin-right: 0;
+    }
+}
+
+.sextuple-negative-h-margin-right {
+
+
+    @include breakpoint($desktop) {
+        margin-right: -200px !important;
+    }
+
+    @include breakpoint($desktop-wide) {
+        margin-right: -250px !important;
+    }
+
+    @include breakpoint($desktop-xxl-wide) {
+        margin-right: -350px !important;
+    }
+
+    @include breakpoint($tablet) {
+        margin-right: -150px !important;
+    }
+
+    @include breakpoint($mobile) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+        margin-right: 0;
+    }
+
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+        margin-right: 0;
+    }
+}

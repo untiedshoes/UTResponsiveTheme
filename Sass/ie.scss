@@ -1,0 +1,11 @@
+/******** IE STYLES *********/
+
+//.col            { border-left: 28px solid #fff; }
+
+img             { width: 100% !important }
+
+@media \0screen {
+  img { 
+    width: auto; /* for ie 8 */
+  }
+}

@@ -1,0 +1,757 @@
+/*
+ * The Flex Grid (v1.5.0) is a lightweight responsive CSS grid using flexbox. Because we can!
+ * http://jeroenoomsnl.github.io/the-flex-grid/
+ */
+
+//
+// Config
+//
+$theflexgrid-gutter: 36px !default;
+$theflexgrid-maxwidth: 100% !default;
+$theflexgrid-silent-only: false !default;
+
+// breakpoints
+$theflexgrid-breakpoint-small-device: "(max-width: 767px)" !default;
+$theflexgrid-breakpoint-medium: "(min-width: 768px) and (max-width: 1024px)" !default;
+$theflexgrid-breakpoint-large: "(max-width: 1200px)" !default;
+$theflexgrid-breakpoint-xlarge: "(min-width: 1200px)" !default;
+$theflexgrid-breakpoint-xxlarge: "(min-width: 1440px)" !default;
+
+@media (max-width: 480px) {
+
+    div[class*='flexcol-'] {
+        width: 100% !important;
+        flex-basis: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .icon-grid {
+        .flexcol-3 {
+            width: 100% !important;
+            flex-basis: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+
+    .area-list-block {
+        .flexcol-3 {
+            width: 100% !important;
+            flex-basis: 100% !important;
+            max-width: 100% !important;
+        }
+    }
+
+    #client-grid {
+        .flexcol-1-of-7 {
+            width: 33.333% !important;
+            flex-basis: 33.333% !important;
+            max-width: 33.333% !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    div[class*='flexcol-'] {
+        width: 100% !important;
+        flex-basis: 100% !important;
+        max-width: 100% !important;
+    }
+
+    #client-grid {
+        .flexcol-1-of-7 {
+            width: 33.333% !important;
+            flex-basis: 33.333% !important;
+            max-width: 33.333% !important;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    //div[class*='flexcol-'] {
+        //width: 100% !important;
+        //flex-basis: 100% !important;
+        //max-width: 100% !important;
+    //}
+
+    #client-grid {
+        .flexcol-1-of-7 {
+            width: 33.333% !important;
+            flex-basis: 33.333% !important;
+            max-width: 33.333% !important;
+        }
+    }
+}
+
+
+//TABLET PORTRAIT
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+    .icon-grid {
+        .flexcol-3 {
+            width: 50% !important;
+            flex-basis: 50% !important;
+            max-width: 50% !important;
+        }
+    }
+
+    .area-list-block {
+        .flexcol-3 {
+            width: 50% !important;
+            flex-basis: 50% !important;
+            max-width: 50% !important;
+        }
+    }
+}
+
+//TABLET LANDSCAPE
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+    .icon-grid {
+        .flexcol-3 {
+            width: 50% !important;
+            flex-basis: 50% !important;
+            max-width: 50% !important;
+        }
+    }
+
+    .area-list-block {
+        .flexcol-3 {
+            width: 50% !important;
+            flex-basis: 50% !important;
+            max-width: 50% !important;
+        }
+    }
+}
+
+.client-grid {
+    flex-wrap: wrap;
+
+    .client-logo {
+        z-index: 1;
+        position: relative;
+        margin: 0px 15px 30px;
+        background-color: rgba(255, 0, 0, 0);
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(238, 238, 238);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+}
+
+.hero-slide {
+    .umb-grid, .grid, flexcol, .full-height-row {
+        height: 100%;
+        position: relative;
+        z-index: 101;
+    }
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 959px) {
+    .row-reverse {
+        flex-direction: row;
+    }
+}
+
+.single-internal-gutter {
+    margin-left: 1px;
+    margin-right: 0;
+
+    @media (max-width: 959px) {
+        margin-left: 0;
+    }
+}
+
+.single-top-gutter {
+    margin-top: 1px;
+    margin-bottom: 0;
+}
+
+
+.section-container {
+    position: relative;
+    width: 100%;
+    padding: 0 0;
+    clear: both;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.section-content {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    &.section-content-wide {
+        max-width: 100%;
+    }
+
+    .section-block-parent {
+        //display: table;
+        position: relative;
+    }
+}
+
+.section-block-content {
+
+    h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
+        margin: 0 0 0 0 !important;
+    }
+}
+
+
+.section-content-wide {
+    .section-block-parent {
+        position: relative;
+
+        .section-block-content {
+
+            h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child {
+                margin: 0 0 0 0 !important;
+            }
+
+            h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child {
+                margin: 0 0 0 0 !important;
+            }
+        }
+    }
+}
+
+.section-heading-cell {
+    .client-logo {
+        width: 200px;
+        margin-top: -68px;
+        display: inline-block;
+    }
+}
+
+.section-heading-divider {
+    border-bottom: 2px solid #00b3cf;
+    margin-bottom: 36px;
+    margin-top: -25px;
+    width: 100%;
+}
+
+.section-block-image {
+
+    &.text-center {
+        img {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+
+    img {
+        //@include breakpoint($mobile) { width: auto !important; max-width: 100% !important; padding: 0 18px; }
+        //@include breakpoint($tablet) { width: auto !important; max-width: 100% !important; padding: 0 18px; }
+        //@include breakpoint($desktop) { width: 100%; max-width: 100%; margin: 0 -40% 0 0; }
+    }
+
+
+    img.pos-right {
+        width: 140%;
+        max-width: 140%;
+        margin: 0 -40% 0 0;
+        position: relative;
+        display: block;
+
+        @include breakpoint($mobile) {
+            margin: 0 0 0 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include breakpoint($desktop) {
+            width: 140%;
+            max-width: 140%;
+            margin: 0 -40% 0 0;
+        }
+    }
+
+    img.pos-left {
+        width: 140%;
+        max-width: 140%;
+        margin: 0 0 0 -40%;
+        position: relative;
+        display: block;
+
+        @include breakpoint($mobile) {
+            margin: 0 0 0 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include breakpoint($desktop) {
+            width: 140%;
+            max-width: 140%;
+            margin: 0 0 0 -40%;
+        }
+    }
+
+    img.pos-pull-up {
+        width: 100%;
+        max-width: 100;
+        margin: -20% 0 0 0;
+        position: relative;
+        display: block;
+
+        @include breakpoint($mobile) {
+            margin: 0 0 0 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include breakpoint($tablet) {
+            margin: 0 0 0 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include breakpoint($desktop) {
+            width: 100%;
+            max-width: 100%;
+            margin: -20% 0 0 0;
+        }
+    }
+
+    img.pos-pull-down {
+        width: 100%;
+        max-width: 100;
+        margin: 0 0 -20% 0;
+        position: relative;
+        display: block;
+
+        @include breakpoint($mobile) {
+            margin: 0 0 -30% 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include breakpoint($tablet) {
+            margin: 0 0 -25% 0;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include breakpoint($desktop) {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 0 -20% 0;
+        }
+    }
+}
+
+.pos-v-middle {
+    //vertical-align: middle;
+    //height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .section-block-content {
+        flex: 1;
+        //display: table-cell;
+        //vertical-align: middle;
+        //@include vertical-align(relative);
+    }
+}
+
+.pos-v-bottom {
+    //vertical-align: middle;
+    //height: 100%;
+    position: relative;
+    display: flex;
+    align-self: flex-end;
+
+    .section-block-content {
+        flex: 1;
+        //display: table-cell;
+        //vertical-align: middle;
+        //@include vertical-align(relative);
+    }
+}
+
+
+.pos-center {
+    margin: 0 auto;
+
+    .section-block-content {
+        margin: 0 auto;
+    }
+}
+
+.rounded-10 {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.rounded-20 {
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.width-100 {
+    max-width: 100%;
+}
+
+.width-90 {
+    max-width: 90%;
+}
+
+.width-80 {
+    max-width: 80%;
+}
+
+.width-75 {
+    max-width: 75%;
+}
+
+.width-70 {
+    max-width: 70%;
+}
+
+.width-60 {
+    max-width: 60%;
+}
+
+.width-50 {
+    max-width: 50%;
+}
+
+.width-40 {
+    max-width: 40%;
+}
+
+.width-30 {
+    max-width: 30%;
+}
+
+.width-20 {
+    max-width: 20%;
+}
+
+
+.flexrow:before, .flexrow:after {
+    display: flex !important;
+}
+
+//
+// Viewport mixin
+//
+@mixin viewport($viewport) {
+
+    @if $viewport != default {
+        $viewport: -#{$viewport};
+    }
+
+    @if $viewport == default {
+        $viewport: '';
+    }
+
+    div.flexcol#{$viewport}-1 {
+        flex-basis: 8.3333333333%;
+        max-width: 8.3333333333%;
+    }
+
+    div.flexcol#{$viewport}-2 {
+        flex-basis: 16.666666666%;
+        max-width: 16.666666666%;
+    }
+
+    div.flexcol#{$viewport}-1-of-5 {
+        flex-basis: 20%;
+        max-width: 20%;
+    }
+
+    div.flexcol#{$viewport}-3 {
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+
+    div.flexcol#{$viewport}-4 {
+        flex-basis: 33.333333333%;
+        max-width: 33.333333333%;
+    }
+
+    div.flexcol#{$viewport}-5 {
+        flex-basis: 41.666666666%;
+        max-width: 41.666666666%;
+    }
+
+    div.flexcol#{$viewport}-6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+
+    div.flexcol#{$viewport}-7 {
+        flex-basis: 58.333333333%;
+        max-width: 58.333333333%;
+    }
+
+    div.flexcol#{$viewport}-1-of-7 {
+        flex-basis: 14.28571428571429%;
+        max-width: 14.28571428571429%;
+    }
+
+    div.flexcol#{$viewport}-8 {
+        flex-basis: 66.666666666%;
+        max-width: 66.666666666%;
+    }
+
+    div.flexcol#{$viewport}-9 {
+        flex-basis: 75%;
+        max-width: 75%;
+    }
+
+    div.flexcol#{$viewport}-10 {
+        flex-basis: 83.333333333%;
+        max-width: 83.333333333%;
+    }
+
+    div.flexcol#{$viewport}-11 {
+        flex-basis: 91.666666666%;
+        max-width: 91.666666666%;
+    }
+
+    div.flexcol#{$viewport}-12 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    div.flexcol-offset#{$viewport}-1 {
+        margin-left: 8.3333333333%;
+        //max-width: 8.3333333333%;
+    }
+
+    div.flexcol-offset#{$viewport}-2 {
+        margin-left: 16.666666666%;
+        //max-width: 16.666666666%;
+    }
+
+    div.flexcol-offset#{$viewport}-3 {
+        margin-left: 25%;
+        //max-width: 25%;
+    }
+
+    div.flexcol-offset#{$viewport}-4 {
+        margin-left: 33.333333333%;
+        //max-width: 33.333333333%;
+    }
+
+    div.flexcol-offset#{$viewport}-5 {
+        margin-left: 41.666666666%;
+        //max-width: 41.666666666%;
+    }
+
+    div.flexcol-offset#{$viewport}-6 {
+        margin-left: 50%;
+        //max-width: 50%;
+    }
+
+    div.flexcol-offset#{$viewport}-7 {
+        margin-left: 58.333333333%;
+        //max-width: 58.333333333%;
+    }
+
+    div.flexcol-offset#{$viewport}-8 {
+        margin-left: 66.666666666%;
+        //max-width: 66.666666666%;
+    }
+
+    div.flexcol-offset#{$viewport}-9 {
+        margin-left: 75%;
+        //max-width: 75%;
+    }
+
+    div.flexcol-offset#{$viewport}-10 {
+        margin-left: 83.333333333%;
+        //max-width: 83.333333333%;
+    }
+
+    div.flexcol-offset#{$viewport}-11 {
+        margin-left: 91.666666666%;
+        //max-width: 91.666666666%;
+    }
+
+    div.flexcol-offset#{$viewport}-12 {
+        margin-left: 100%;
+        //max-width: 100%;
+    }
+
+    div.flexcol#{$viewport}-top {
+        align-self: flex-start;
+    }
+
+    div.flexcol#{$viewport}-bottom {
+        align-self: flex-end;
+    }
+
+    div.flexcol#{$viewport}-middle {
+        align-self: center;
+    }
+
+    .flexrow#{$viewport}-left {
+        justify-content: flex-start;
+    }
+
+    .flexrow#{$viewport}-right {
+        justify-content: flex-end;
+    }
+
+    .flexrow#{$viewport}-center {
+        justify-content: center;
+    }
+
+    .flexrow#{$viewport}-space-between {
+        justify-content: space-between;
+    }
+
+    .flexrow#{$viewport}-space-around {
+        justify-content: space-around;
+    }
+
+    .flexrow#{$viewport}-reverse {
+        flex-direction: flexrow-reverse;
+    }
+
+    .flexrow#{$viewport}-equal > * {
+        display: flex;
+
+        & > * {
+            width: 100%;
+        }
+    }
+
+    .flexrow#{$viewport}-top {
+        align-items: flex-start;
+    }
+
+    .flexrow#{$viewport}-middle {
+        align-items: center;
+    }
+
+    .flexrow#{$viewport}-bottom {
+        align-items: flex-end;
+    }
+
+    .hide#{$viewport} {
+        display: none;
+    }
+}
+
+/* Generic grid styles */
+%grid {
+    margin: 0 auto;
+    max-width: $theflexgrid-maxwidth;
+    overflow: visible;
+}
+
+%flexrow {
+    display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box; /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox; /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Chrome */
+    display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -#{$theflexgrid-gutter/2} 0 -#{$theflexgrid-gutter/2};
+
+    & > * {
+        box-sizing: border-box;
+        padding: 0 $theflexgrid-gutter/2 $theflexgrid-gutter;
+        flex-basis: 100%;
+    }
+
+    &:last-child {
+        margin-bottom: -#{$theflexgrid-gutter};
+    }
+}
+
+%gutterless {
+    & > * {
+        margin: 0;
+
+        & > * {
+            padding: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+%flexcol {
+    flex: 1 0 auto;
+}
+
+@if $theflexgrid-silent-only == false {
+    .grid {
+        @extend %grid;
+    }
+
+    .gutterless {
+        @extend %gutterless;
+    }
+
+    .flexrow {
+        @extend %flexrow;
+    }
+
+    .flexcol {
+        @extend %flexcol;
+    }
+
+    /* Default view */
+    @include viewport(default);
+
+    /* small-device viewport (mobile) */
+    @media #{$theflexgrid-breakpoint-small-device} {
+        @include viewport(small-device);
+    }
+
+    /* Medium viewport (tablets) */
+    @media #{$theflexgrid-breakpoint-medium} {
+        @include viewport(medium);
+    }
+
+    /* Large viewport (desktop) */
+    @media #{$theflexgrid-breakpoint-large} {
+        @include viewport(large);
+    }
+
+    /* xLarge viewport (desktop) */
+    @media #{$theflexgrid-breakpoint-xlarge} {
+        @include viewport(xlarge);
+    }
+
+
+    /* Large viewport (desktop) */
+    @media #{$theflexgrid-breakpoint-xxlarge} {
+        @include viewport(xxlarge);
+    }
+}
+
+//Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}

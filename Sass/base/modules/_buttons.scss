@@ -1,0 +1,141 @@
+.button.radius, .button-radius  {
+    @include border-radius($button-radius);
+}
+.button         {
+  background: $btn-base-bg-color; border: 1px solid $btn-base-border-color; color: $white; font-family: $button-font-family; cursor: pointer; @include inline-block(middle);
+  line-height: 1; outline: medium none; transition: background-color 0.15s ease-in-out 0s; text-align: center; position: relative; width: auto; font-weight: normal;
+    &:hover { background: $btn-base-hover-color; border: 1px solid $btn-base-hover-color; color: $white; }
+}
+
+
+.read-more-trans {
+    color: #FFF !important;
+	text-decoration: none;
+    padding: 15px 50px;
+    margin-top:0.91667em;
+    border: 1px solid #fff;
+    letter-spacing: 2px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    @include adjust-font-size-to( 12px);
+    font-family: 'Poppins';
+    font-weight: 600;
+    display: inline-block;
+    z-index: 9999;
+    position: relative;
+    &:hover {
+       background: rgba(255,255,255,1); border: 1px solid rgba(255,255,255,1); color: #303133 !important; text-decoration: none !important;
+    }
+}
+
+.read-more-trans-blue {
+    color: #FFF !important;
+    text-decoration: none;
+    padding: 15px 50px;
+    margin-top: 0.91667em;
+    letter-spacing: 2px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    @include adjust-font-size-to( 12px);
+    font-family: 'Poppins';
+    font-weight: 600;
+    display: inline-block;
+    z-index: 9999;
+    position: relative;
+    background: #04b4cd;
+
+    @media (max-width: 480px ) {
+        width: 100%;
+        text-align: center;
+    }
+
+
+
+    &:hover {
+        background: #303133;
+        color: #fff !important;
+        text-decoration: none !important;
+    }
+}
+
+
+.read-more {
+    color: #000;
+    padding: 15px 0;
+    border: 1px solid #000;
+    letter-spacing: 2px;
+    font-size: 10px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    @include adjust-font-size-to( 11px);
+    font-family: 'Poppins';
+    letter-spacing: 2.8px;
+    display: inline-block;
+    margin-top: 40px;
+    &:hover {
+       background: rgba(255,255,255,1); color: #303133;
+    }
+}
+
+.main-accent-style-button {
+    background: #00b3cf;
+    color: #fff;
+    padding: 18px 0;
+    border: none;
+    letter-spacing: 2px;
+    font-size: 10px;
+    text-decoration: none;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -ms-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    @include adjust-font-size-to( 12px);
+    font-family: 'Poppins';
+    font-weight: 600;
+    display: block;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    &:hover {
+       background: rgba(48,49,51,1); color: #fff;
+    }
+}
+
+
+.normbutton     { padding: 11px; @include adjust-font-size-to( 15px, 1); }
+
+.mediumbutton   { padding: $btn-base; @include adjust-font-size-to( $p-font-size-medium); }
+
+.smallbutton    { padding: $small-btn-base; @include adjust-font-size-to( $p-font-size-medium); }
+
+.tinybutton     { padding: $tiny-btn-base; @include adjust-font-size-to( $p-font-size-small); }
+
+.largebutton    { padding: $large-btn-base; @include adjust-font-size-to(20px); }
+
+.callout        { width: 100%; padding: $callout-btn-base; font-weight: bold; text-align: center; }
+
+.fullbutton     { width: 100%; text-align: center; }
+.halfbutton     { width: 50%;  }
+
+.withleading    { @include leader(1, $p-font-size); }
+.withtrailing   { @include trailer(1, $p-font-size); }
+
+@include breakpoint($mobile) {
+  .button { width: 100%; }
+}
+@media screen and (orientation: portrait) {
+  .button { width: 100%; }
+}

@@ -1,0 +1,93 @@
+﻿.stacked-images-container {
+    overflow: hidden;
+
+    .stacked-images {
+        height: 0;
+        overflow: hidden;
+        padding-bottom: 102.9126214%;
+        position: relative;
+        z-index: 20;
+
+        @media (min-width: 992px) {
+            height: auto;
+            margin-left: auto;
+            margin-right: 0;
+            padding-bottom: 0;
+            width: 100%;
+            position: relative;
+            z-index: 20;
+        }
+
+        .stacked-images_inner {
+            @media (min-width: 992px) {
+                margin-left: auto;
+                margin-right: 0;
+                padding-bottom: 102.9126214%;
+                position: relative;
+            }
+
+            .stacked-image {
+                left: 50%;
+                position: absolute;
+                top: 50%;
+
+                figure {
+                    position: relative;
+
+                    .st-image {
+                        height: auto;
+                        left: 0;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                    }
+                }
+
+                &.stacked_01 {
+                    margin-left: -49%;
+                    margin-top: -35%;
+                    width: 44%;
+                }
+
+                &.stacked_02 {
+                    margin-left: -12%;
+                    margin-top: -51.5%;
+                    width: 195px;
+                    width: 58.1%;
+
+                    @media (min-width: 992px) {
+                        margin-left: -20%;
+                    }
+                }
+
+                &.stacked_03 {
+                    margin-left: 14%;
+                    margin-top: 2%;
+                    width: 36%;
+                }
+
+                &.stacked_04 {
+                    @media (min-width: 992px) {
+                        margin-left: -12%;
+                    }
+
+                    margin-left: -16%;
+                    margin-top: 8.5%;
+                    width: 110px;
+                    width: 32.4%;
+                }
+
+                &.stacked_05 {
+                    @media (min-width: 992px) {
+                        margin-left: -36%;
+                    }
+
+                    margin-left: -39%;
+                    margin-top: -11.5%;
+                    width: 114.33333px;
+                    width: 34.42%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+  /* Accordion ---------------------- */
+  ul#q-a-accordion { margin: 0 0 rhythm(1) 0; padding:0 !important;
+
+    &>li {  list-style: none; margin:0 !important; padding:0 !important;
+
+      & > div.title { cursor: pointer; padding: 13px 33px; margin: 0; position: relative;  border-bottom: 1px solid $panel-border-color; background: url(../content/images/accordian-indicator.png) 4px 50% no-repeat;  @include adjust-font-size-to( 18px );
+
+        h1, h2, h3, h4, h5 { margin: 0; color: #666666; font-weight: bold;  }
+        /* &:after { @include cssTriangle(6px, darken($secondary-color, 30%), $defaultOpposite); position: absolute; #{$defaultOpposite}: 15px; top: 21px; } */
+       &:hover { background: url(../content/images/accordian-indicator-over.png) 4px 50% no-repeat;
+         h1, h2, h3, h4, h5 { margin: 0; color: #000; font-weight: bold;  }
+         }
+       
+      }
+
+      .content { display: none; padding: 15px; }
+
+      &.active { 
+
+        .title { background: $white; padding-top: 13px; border-bottom: none;
+          h1, h2, h3, h4, h5 { margin: 0; color: #000;  }
+          /* &:after { @include cssTriangle(6px, darken($secondary-color, 30%), top); } */
+        }
+        .content { background: $white; display: block; border-bottom: 1px solid $panel-border-color; }
+      }
+    }
+  }
+  
+  /* Fig Captions ---------------- */
+ figcaption      { color: $body-text-color; text-align: center; 
+  &.caption-panel { text-align: left; border: 1px solid $panel-border-color; background: $panel-background; padding: 5px 10px; font-weight: normal; font-size: 100%; @include border-radius($panel-radius);
+    p { @include trailer(0, $p-font-size-medium); }
+    }
+  &.overlay { position: absolute; left:0; bottom:0; width: 100%; padding: 10px; background: #000; @include opacity(0.3); z-index: 900; text-align: left;
+          h4 {  @include leader(0, $h4-font-size); @include trailer(0, $h4-font-size); color: $white;}
+          h5 {  @include leader(0, $h5-font-size); @include trailer(0, $h5-font-size); color: $white;}
+          em { @include leader(0, $p-font-size-small); @include trailer(0, $p-font-size-small); width: 100%; display: block; }
+          a  { color: $white !important; @include leader(0, $p-font-size-small); @include trailer(0, $p-font-size-small);
+              &:hover { color: #fff; }
+             }
+          &:hover { @include opacity(0.7); @include single-transition(all, 0.5s, ease, 0); }
+          }
+}
+
+div.bar-notification { background: #eee;
+  &.success { background: #5ba800; color: #fff; text-shadow: none; }
+  &.error { background: #e92127; color: #fff; text-shadow: none; }
+}
+  //.col { margin-top: 0 !important; margin-bottom: 0 !important; }
+  .alert-box { display: block; font-weight: normal; font-size: ms(0);  padding: 10px;  text-shadow: none; position: relative;
+    
+    .product-success { background: #95AD5F; color: #296a23; text-shadow: none;  }
+    .error { background-color: $alertColor; color: #fff !important; text-shadow: none; padding: 10px;
+      p { color: #fff !important; }
+     }
+    &.secondary { background-color: $secondary-color; color: darken($secondary-color, 60%); text-shadow: 0 1px rgba(#fff,.3); }
+    &.standard  { background-color: $standardAlertColor; color: $black !important; text-shadow: none; padding: 10px; }
+
+    a.close { color: #333; position: absolute; #{$defaultOpposite}: 4px; top: 4px; cursor: hand; cursor: pointer; font-size: ms(1); opacity: 0.7; padding: 0; text-indent: -9999px; width:32px; height:32px; display: block; background: url(images/ico-close-notification-bar.png) 50% 50% no-repeat; }
+    a.close:hover, a.close:focus { opacity: 1; }
+    h3, h4, h5 { margin-bottom: 5px !important; }
+    p { margin-bottom: 0 !important; }
+
+  }

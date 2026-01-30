@@ -1,0 +1,132 @@
+@media screen and (max-width: 979px) {
+
+  %revert-list {
+    visibility: visible;
+    opacity: 1;
+    display: none;  
+  }
+
+  .animenu {
+    #{$input}:checked ~ label,
+    #{$input} ~ label:hover, {
+      color: $orange;
+    }   
+    label { 
+      background: $black;
+      color: $orange;
+      width: 100%;
+      padding: 15px 20px 15px 30px;
+      margin-top: 14px;
+      font-style: normal;
+      font-weight: normal;
+      @include adjust-font-size-to(18px);
+      font-family: $nav-font-family;
+      //border: 1px solid darken($baseMenuBackground, 5%);
+      //@include menu-background($baseMenuBackground);
+      //@include box-shadow(0 1px 0 rgba(255, 255, 255, .2) inset);
+      //color: $baseMenuColor;
+      //@include text-shadow(0 1px 0 $baseMenuBackground);
+      //@include border-radius(3px);
+      text-transform: uppercase;
+      position:relative;
+      display:block;
+      padding: $gutter 3 * $gutter;
+      &:before {
+        position: absolute;
+        left: $gutter / 2;
+        top: 14px; 
+        content: "\2261";
+        font-size: 2em;
+      }
+    }   
+    // First level -> main menu items
+    // <nav class="animenu">
+    //    <ul></ul>
+    //  </nav>      
+    > ul {
+      width: 100%;
+      position: relative;
+      border-color: $baseMenuBackground;
+      margin: $gutter / 2 0 !important;
+      padding: $gutter / 4;
+      @include box-shadow(none);
+      @include border-radius(0);
+      @include menu-background(#404041, false);
+      //@include pseudo-triangle(6px, 2);
+      @extend %revert-list;
+      li {
+        width: 100%; text-align: left; display: block; border-top: 1px solid #333333; border-bottom: 1px solid #111;
+      }
+      &:first-child li { border-top: none; }
+      &:last-child li { border-bottom: none; }                
+      > li {
+        float: none;
+        
+        @include box-shadow(none);
+        @include menu-background(#404041, false);
+        > a {
+          float: none;
+          text-align: left;
+          display: block;
+          padding: 13px 30px !important;
+          color: #fff;
+          &:hover { color: #fff !important; }
+        }
+      }
+      // Second level
+      // <nav class="animenu">
+      //    <ul>
+      //      <ul></ul>
+      //    </ul>
+      //  </nav>                
+      ul {
+        position: static;
+        @include border-radius(0);
+        @include menu-background(lighten(#333, 10%), false);
+        @extend %revert-list;
+        @include transition-property("none");
+        @include box-shadow(none);
+        margin:0;
+        li {
+          &:first-child > a {
+            @include border-radius(0);
+            &:after {
+              content: none;
+            }
+          }
+          &:last-child > a {
+            @include border-radius(0);
+          }
+        }             
+        a {
+          padding-left: 40px;
+          display: block;
+          width: auto; 
+          &:hover { color: #fff;}        
+        }           
+      } // end second level
+    } // end first level
+    #{$input}:checked {   
+      ~ ul {
+        display: block;               
+        ul {
+          display: block;         
+        }
+      } 
+    } // end #{$input}:checked
+  } // end .animenu
+  
+} //end @media
+
+
+// Adjust menu when resizing [in this case].
+// To be updated depending of menu items length.  
+@media screen and (max-width: 600px) {
+  .animenu > ul {
+    > li {
+      > a {
+        //padding: $gutter 2 * $gutter;
+      }
+    }
+  }
+}

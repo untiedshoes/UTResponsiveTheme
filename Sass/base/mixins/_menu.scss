@@ -1,0 +1,195 @@
+
+// Variables
+$MenuItemWidth: auto; 
+$subMenuItemWidth: 224px;     // Minimum width for submenus' items
+$baseMenuBackground: #333333;      // Base color theme
+$secondaryMenuBackground: $orange;  // Secondary color (highlights, triangles...)
+$baseMenuColor: #999;       // Proper menu items color
+$gutter: 1.2em;           // Base gutter
+$input: "input[type=checkbox]";   // Checkbox hack selector
+
+// Menu background mixin
+@mixin menu-background($color, $menu-gradient: true) {
+  background-color: $color;
+  @if $menu-gradient == true {
+    @include background-image(linear-gradient(rgba(255, 255, 255, .2),
+                          rgba(255, 255, 255, 0)));
+  }
+  @else {
+    background-image: none;
+  } 
+}
+
+// Menu background mixin
+// The $size argument specifies the actual size of the triangle
+// The $shift-left helps on horizontal positioning.
+@mixin pseudo-triangle($size, $shift-left) {
+  &:after {
+    content: '';
+    position: absolute;
+    left: $shift-left * $gutter;
+    top: -$size * 2;
+    border: $size solid transparent;
+    border-bottom-color: inherit;
+  }
+}
+
+@mixin pseudo-mobile-triangle($size, $shift-left, $color) {
+  &:after {
+    content: '';
+    position: absolute;
+    left: $shift-left * $gutter;
+    top: -$size * 2;
+    border: $size solid transparent;
+    border-bottom-color: $color;
+  }
+}
+
+// Shortest clearfix. Ever. IE8+. 
+// http://www.css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+%cf:after {
+  content:"";
+  display:table;
+  clear:both;   
+}
+
+// Fix for Android
+// http://timpietrusky.com/advanced-checkbox-hack
+body { 
+  -webkit-animation: bugfix infinite 1s; 
+}
+
+@-webkit-keyframes bugfix { 
+  from { padding: 0; } 
+  to { padding: 0; } 
+}
+
+// New box model, small reset, global stuff
+.animenu {
+  //font: bold 13px Arial, Helvetica;
+  * {
+    @include box-sizing(border-box);
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include border-radius(0);
+  }
+  li {
+    position: relative;
+    &:hover {
+      > ul {
+        opacity: 1;
+        visibility: visible;
+        margin: 0;        
+      }
+      > a {
+        color: #222;
+      }
+    }
+  }
+  #{$input} {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  label {
+    display:none;
+    cursor: pointer;
+    user-select:none;
+  }             
+}
+
+// First level -> main menu items
+// <nav class="animenu">
+//    <ul></ul>
+//  </nav>
+.animenu > ul {
+  //border: 1px solid darken($baseMenuBackground, 5%);
+  //@include menu-background($baseMenuBackground);  
+  //@include box-shadow(0 1px 0 rgba(255, 255, 255, .2) inset);
+  
+  float: right;
+  
+  @extend %cf;
+  > li {
+    float: left;
+    margin-bottom: 0 !important;
+    width: $MenuItemWidth;
+    text-align: left;
+    //border-right: 1px solid #868686;
+    //@include box-shadow(1px 0 0 lighten($baseMenuBackground, 20%));
+    
+    &:last-child {  border-right: none;
+      a { padding-right: 0 !important; }
+    }
+    > a {
+      //float: left;
+      margin:0 0 0 0; padding: 10px 0 10px 30px; text-transform: uppercase;
+      text-align: center;
+      color:$nav-font-color; font-family: $nav-font-family; font-weight: $nav-font-weight; 
+      @include adjust-font-size-to( $nav-font-size );
+      &:hover, &.active { color: $nav-font-hover-color !important; }
+    }
+  }
+  a {
+    color: $baseMenuColor;
+    text-decoration: none;
+    //@include text-shadow(0 1px 0 $baseMenuBackground);    
+  }
+
+  // Second level
+  // <nav class="animenu">
+  //    <ul>
+  //      <ul></ul>
+  //    </ul>
+  //  </nav>
+  ul {
+    position: absolute;
+    top: 30px; left: 30px;
+    z-index: 999;   
+    opacity: 0;
+    visibility: hidden;
+    margin: 2 * $gutter 0 0 0;
+    @include menu-background(lighten($baseMenuBackground, 0), false);    
+    @include transition-property("margin, opacity");
+    @include transition-duration(".15s");
+    @include transition-timing-function(ease-in-out);
+    @include box-shadow(5px 5px 5px rgba(0, 0, 0, 0.5), 
+                5px 5px 5px rgba(0, 0, 0, 0.5));
+    li {
+      display: block;
+      text-align: left;
+      margin-bottom: 0 !important;
+      @include box-shadow(0 1px 0 lighten(#fff, 0));
+      &:first-child > a {
+        @include border-radius(0);
+        @include pseudo-triangle(6px, 4);
+      }
+      &:last-child {
+        @include box-shadow(none);
+        > a {
+          @include border-radius(0);
+        }
+      }
+    }
+    a {
+      padding: $gutter;
+      width: $subMenuItemWidth;
+      display: block;
+      border-color: lighten($baseMenuBackground, 0);
+      color: #fff;
+      text-transform: uppercase;
+      @include adjust-font-size-to( 13px);
+      &:hover {
+        background-color: $secondaryMenuBackground;
+        border-color: $secondaryMenuBackground;
+        color: lighten($baseMenuColor, 80%);
+      }
+    }
+  }
+}
+
+// Last but not least: the responsive stuff
+@import "responsive-nav";

@@ -1,0 +1,1106 @@
+h1 {
+    /* Sets the font-size and line-height while keeping a proper vertical rhythm. */
+    @include adjust-font-size-to( $h1-font-size );
+    /* Sets 1 unit of vertical rhythm on the top and bottom margins. */
+    @include leader(0, $h1-font-size);
+    @include trailer(.5, $h1-font-size);
+    letter-spacing: 0.02em !important;
+    
+}
+
+h2 {
+    //@include adjust-font-size-to( $h2-font-size, 1.5 );
+    //@include leader(0, $h2-font-size);
+    //@include trailer(1, $h2-font-size);
+    letter-spacing: 0.02em !important;
+   
+}
+
+
+h3 {
+    //@include adjust-font-size-to( 48px, 2.2 );
+    //@include leader(0, $h3-font-size);
+    //@include trailer(1, $h3-font-size);
+    letter-spacing: 0.02em !important;
+   
+}
+
+h4 {
+    //@include adjust-font-size-to( 22px, 1.4 );
+    //@include leader(0, $h4-font-size);
+    //@include trailer(.5, $h4-font-size);
+    letter-spacing: 0.02em !important;
+    
+}
+
+h5 {
+    //@include adjust-font-size-to( $h5-font-size, 1 );
+    //@include leader(0, $h5-font-size);
+    //@include trailer(.5, $h5-font-size);
+    letter-spacing: 0.02em !important;
+}
+
+h6 {
+    //@include adjust-font-size-to( $h6-font-size );
+    //@include leader(0, $h6-font-size);
+    //@include trailer(0, $h6-font-size);
+    
+}
+
+.section-container {
+    h1, h2, h3 {
+        //word-break: break-all;
+        overflow-wrap: break-word;
+    }
+}
+
+p {
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Hind';
+    font-weight: 400;
+}
+
+p, li, dt, dd, dl, address, label, small, pre, code {
+    @include adjust-font-size-to( 16px );
+    line-height: 1.85;
+    margin: 18px 0 0;
+}
+
+.text-center {
+  p { margin-left:auto !important; margin-right:auto !important; }
+}
+
+.p-perc_60 {
+    .rotated-title {
+        opacity:0.5;
+    }
+}
+
+.rotated-title {
+    display: flex;
+    flex-flow: row nowrap;
+    color: hsla(0,0%,100%,.5);
+
+    @media (min-width: 992px) {
+        display: inline-flex;
+        transform: rotate(-90deg) translate(-100%);
+        transform-origin: 0 0;
+        margin-bottom: 0;
+    }
+}
+
+.rotate-90 {
+
+    h1, h2, h3, h4, h5, p, span {
+        transform: rotate(-90deg);
+        /* Legacy vendor prefixes that you probably don't need... */
+        /* Safari */
+        -webkit-transform: rotate(-90deg);
+        /* Firefox */
+        -moz-transform: rotate(-90deg);
+        /* IE */
+        -ms-transform: rotate(-90deg);
+        /* Opera */
+        -o-transform: rotate(-90deg);
+        /* Internet Explorer */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+}
+
+.heading-text {
+    h2 {
+        @include leader(0, $h2-font-size);
+        @include trailer(0.5, $h2-font-size);
+        font-family: $header-font-family;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        /*color: #303133;*/
+        @include breakpoint($mobile) {
+            @include adjust-font-size-to( 35px, 2 );
+        }
+
+        @include breakpoint($tablet) {
+            @include adjust-font-size-to( 50px, 2 );
+        }
+
+        @include breakpoint($desktop) {
+            @include adjust-font-size-to( 75px, 2 );
+        }
+
+        @include breakpoint($desktop-wide) {
+            @include adjust-font-size-to( 75px, 2 );
+        }
+    }
+
+    p {
+
+        @include leader(0, $p-font-size);
+        @include trailer(0, $p-font-size);
+        /*font-family: $header-font-family;
+      font-weight: 400;*/
+        color: #777777;
+
+        @include breakpoint($mobile) {
+            @include adjust-font-size-to( 15px, 1.3 );
+        }
+
+        @include breakpoint($tablet) {
+            @include adjust-font-size-to( 16px, 1.50 );
+        }
+
+        @include breakpoint($desktop) {
+            @include adjust-font-size-to( 18px, 1.75 );
+        }
+
+        @include breakpoint($desktop-wide) {
+            @include adjust-font-size-to( 18px, 1.75 );
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #0BB4CE;
+    }
+}
+
+.heading-has-underscore-center {
+  h1, h2, h3, h4, h5 {
+    &:after {
+        content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 100px;
+    border-bottom: 2px solid #0BB4CE;
+      }
+  }
+}
+
+.heading-has-underscore-left {
+  h1:first-of-type, h2:first-of-type, h3:first-of-type, h4:first-of-type, h5:first-of-type {
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      transform: translateX(0);
+      height: 2px;
+      width: 60px;
+      border-bottom: 2px solid #00B3CF;
+      }
+  }
+
+  p:first-of-type, ul:first-of-type {
+    margin-top: 47px;
+  }
+}
+
+.block-heading-text {
+  h3 {
+    @include leader(0, $h2-font-size);
+    @include trailer(1, $h2-font-size);  
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    color: #fff;
+    position: relative;
+    @include breakpoint($mobile) { @include adjust-font-size-to( 35px, 2 ); }
+    @include breakpoint($tablet) { @include adjust-font-size-to( 50px, 2 ) ; }
+    @include breakpoint($desktop) { @include adjust-font-size-to( 50px, 2 ) ; }
+    @include breakpoint($desktop-wide) { @include adjust-font-size-to( 50px, 2.2 ) ; }
+    &.has-underscore {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #fff;
+      }
+    }
+    &.has-blue-underscore {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #00b3cf;
+      }
+    }
+    &.underline-full {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px solid #eaeaea;
+      }
+    }
+  }  
+  
+  p {
+    
+      @include leader(0, $p-font-size);
+      @include trailer(1, $p-font-size);
+      /*font-family: $header-font-family;
+      font-weight: 400;*/
+    color: #fff;
+      @include breakpoint($mobile) { @include adjust-font-size-to( 15px, 1.3 ) }
+      @include breakpoint($tablet) { @include adjust-font-size-to( 16px, 1.50 ); }
+      @include breakpoint($desktop) { @include adjust-font-size-to( 18px, 1.75 ); }
+      @include breakpoint($desktop-wide) { @include adjust-font-size-to( 18px, 1.75 ); }
+      
+      &.smaller {
+        @include breakpoint($mobile) { @include adjust-font-size-to( 15px, 1.3 ); }
+        @include breakpoint($tablet) { @include adjust-font-size-to( 16px, 1.50 ); }
+        @include breakpoint($desktop) { @include adjust-font-size-to( 15px, 1.5 ); }
+        @include breakpoint($desktop-wide) { @include adjust-font-size-to( 16px, 1.5 ); }
+      }
+
+  } 
+}
+
+.panel-heading-text {
+  h3 {
+    @include leader(0, $h2-font-size);
+    @include trailer(1, $h2-font-size);  
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    color: #303133;
+    position: relative;
+    @include breakpoint($mobile) { @include adjust-font-size-to( 18px, 1.2 ); }
+    @include breakpoint($tablet) { @include adjust-font-size-to( 24px, 1.4 ) ; }
+    @include breakpoint($desktop) { @include adjust-font-size-to( 29px, 1.8 ) ; }
+    @include breakpoint($desktop-wide) { @include adjust-font-size-to( 29px, 1.8 ); }
+  }  
+  
+  p {
+    
+      @include leader(0, $p-font-size);
+      @include trailer(1, $p-font-size);
+      /*font-family: $header-font-family;
+      font-weight: 400;*/
+    color: #777777;
+      max-width: 340px;
+      margin:0 auto;
+      @include breakpoint($mobile) { @include adjust-font-size-to( 15px, 1.3 ); }
+      @include breakpoint($tablet) { @include adjust-font-size-to( 15px, 1.3 ); }
+      @include breakpoint($desktop) { @include adjust-font-size-to( 15px, 1.5 ); }
+      @include breakpoint($desktop-wide) { @include adjust-font-size-to( 15px, 1.3 ); }
+      
+      &.smaller {
+        @include breakpoint($mobile) { @include adjust-font-size-to( 15px, 1.3 ); }
+        @include breakpoint($tablet) { @include adjust-font-size-to( 16px, 1.50 ); }
+        @include breakpoint($desktop) { @include adjust-font-size-to( 15px, 1.5 ); }
+        @include breakpoint($desktop-wide) { @include adjust-font-size-to( 16px, 1.5 ); }
+      }
+
+  } 
+}
+
+.lrg-icon {
+  font-size: 65px; color: #303133; margin-bottom: 27px; display: inline-block;
+}
+
+#testimonials {
+  .quote-text p {
+      font-family: 'Libre Baskerville', serif;
+      //color: #fff;
+      font-weight: 400;
+      font-style: italic;
+      max-width: 60%;
+      margin:0 auto;
+      
+        @include breakpoint($mobile) { @include adjust-font-size-to( 24px, 2 ); max-width: 100%; }
+        @include breakpoint($tablet) { @include adjust-font-size-to( 24px, 2 ); max-width: 100%; }
+        @include breakpoint($desktop) { @include adjust-font-size-to( 36px, 3 ); max-width: 60%; }
+        @include breakpoint($desktop-wide) { @include adjust-font-size-to( 36px, 3 ); max-width: 60%; }
+      
+      span { font-family: $header-font-family; font-weight: 400; font-style: normal; @include adjust-font-size-to( 6px, 1 ) }
+  }
+
+}
+
+.dark-style {
+  .block-item-content h3, .blog-item-content h3 { 
+    color: #fff;
+  }
+}
+.light-style {
+  .block-item-content h3, .blog-item-content h3, .standard-block-item-content h3 { 
+    color: #303133;
+    a {
+      color: #303133;
+      &:hover {
+      color:#00b3cf;
+    }
+    }
+  }
+}
+
+.block-item-content {
+  h3 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include adjust-font-size-to( 29px, 1.8 );
+    @include leader(0, $h3-font-size);
+    @include trailer(0, $h3-font-size);
+    &.has-underscore {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #00b3cf;
+      }
+    }
+  }
+  
+  h4 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include adjust-font-size-to( 16px, 1.4 );
+    @include leader(0, $h4-font-size);
+    @include trailer(1, $h4-font-size);
+    &.main-accent-colour {
+      color: #00B2D0;
+    }
+  }
+  
+  h5 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include adjust-font-size-to( 12px, 1 );
+    @include leader(1, $h4-font-size);
+    @include trailer(1, $h4-font-size);
+    &.main-accent-colour {
+      color: #00B2D0;
+    }
+  }
+  
+  p {
+    /*font-family: $header-font-family;
+    font-weight: 400;*/
+    letter-spacing: 0;
+    color: #777;
+    max-width: 60%;
+  }
+  
+}
+
+.standard-block-item-content {
+  h3 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include adjust-font-size-to( 29px, 1.8 );
+    @include leader(0, $h3-font-size);
+    @include trailer(0, $h3-font-size);
+    &.underline-full {
+      margin-bottom: 1.61765em;
+    }
+    &.has-underscore {
+      margin-bottom: 1.61765em;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #00b3cf;
+      }
+    }
+  }
+  
+  h4 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include font-size-important( 16px, 1.4 );
+    @include leader(0, $h4-font-size);
+    @include trailer(1, $h4-font-size);
+    &.main-accent-colour {
+      color: #00B2D0;
+    }
+  }
+  
+  h5 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include font-size-important( 12px, 1 );
+    @include leader(1, $h4-font-size);
+    @include trailer(1, $h4-font-size);
+    &.main-accent-colour {
+      color: #00B2D0;
+    }
+  }
+  
+  p {
+    /*font-family: $header-font-family;
+    font-weight: 400;*/
+    letter-spacing: 0;
+    color: #777;
+    &.smaller {
+      
+    }
+  }
+  
+}
+
+.blog-item-content {
+  figure {
+    @include leader(0, $h3-font-size);
+    @include trailer(2, $h3-font-size);
+  }
+  h3 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+  font-size:1.45em !important;
+  margin-top: 0.5em !important;
+    //@include adjust-font-size-to( 21px, 1.7 );
+    //@include leader(0, $h3-font-size);
+    //@include trailer(0, $h3-font-size);
+    &.has-underscore {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #00b3cf;
+      }
+    }
+  }
+  
+  h4 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include adjust-font-size-to( 16px, 1.4 );
+    @include leader(1, $h4-font-size);
+    @include trailer(1, $h4-font-size);
+  }
+  
+  h5 {
+    font-family: $header-font-family;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    @include adjust-font-size-to( 12px, 1 );
+    @include leader(1, $h4-font-size);
+    @include trailer(1, $h4-font-size);
+    &.main-accent-colour {
+      color: #00B2D0;
+    }
+  }
+  
+  p {
+    /*font-family: $header-font-family;
+    font-weight: 400;*/
+    letter-spacing: 0;
+    color: #777;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E6E6E6;
+    max-width: 360px;
+  }
+}
+
+.mainfooter {
+  p {
+    /*font-family: $header-font-family;
+    font-weight: 600;*/
+    letter-spacing: 0;
+    color: #191D1F;
+    a {
+      color: #191D1F;
+      &:hover {
+        color: #00B2D0;
+      }
+    }
+  }
+}
+
+.heading-increase-20 {
+    .section-block-content {
+        h2, .h2 {
+
+            @include breakpoint($mobile) {
+                @include adjust-font-size-to( 35px, 1.8 );
+            }
+
+            @include breakpoint($tablet) {
+                @include adjust-font-size-to( 40px, 2.2 );
+            }
+
+            @include breakpoint($desktop) {
+                @include adjust-font-size-to( 80px, 5.5 );
+            }
+
+            @include breakpoint($desktop-wide) {
+                @include adjust-font-size-to( 80px, 5.5 );
+            }
+        }
+
+        h3, .h3 {
+
+            @include breakpoint($mobile) {
+                @include adjust-font-size-to( 35px, 1.8 );
+            }
+
+            @include breakpoint($tablet) {
+                @include adjust-font-size-to( 40px, 2.2 );
+            }
+
+            @include breakpoint($desktop) {
+                @include adjust-font-size-to( 80px, 5.5 );
+            }
+
+            @include breakpoint($desktop-wide) {
+                @include adjust-font-size-to( 80px, 5.5 );
+            }
+        }
+    }
+}
+
+.heading-increase-30 {
+    .section-block-content {
+        h2, .h2 {
+
+            @include breakpoint($mobile) {
+                @include adjust-font-size-to( 35px, 1.8 );
+            }
+
+            @include breakpoint($tablet) {
+                @include adjust-font-size-to( 40px, 2.2 );
+            }
+
+            @include breakpoint($desktop) {
+                @include adjust-font-size-to( 110px, 5.5 );
+            }
+
+            @include breakpoint($desktop-wide) {
+                @include adjust-font-size-to( 110px, 5.5 );
+            }
+        }
+
+        h3, .h3 {
+
+            @include breakpoint($mobile) {
+                @include adjust-font-size-to( 35px, 1.8 );
+            }
+
+            @include breakpoint($tablet) {
+                @include adjust-font-size-to( 40px, 2.2 );
+            }
+
+            @include breakpoint($desktop) {
+                @include adjust-font-size-to( 110px, 5.5 );
+            }
+
+            @include breakpoint($desktop-wide) {
+                @include adjust-font-size-to( 110px, 5.5 );
+            }
+        }
+    }
+}
+
+.banner {
+	.section-block-content  {
+		h1, .h1 { @include adjust-font-size-to( 75px, 3.2 ); margin: 18px 0;
+		
+		}
+
+		h2, .h2 { }
+
+		h3, .h3 { }
+
+		h4, .h4 { }
+
+		h5, .h5 { }
+
+		p { 
+			&.large-p { @include adjust-font-size-to( 20px, 1.75 ); }
+		}
+
+		h1, h2, h3, h4, h5, p {
+			&.text-accent-color { color: #04b4cd; }
+			&.font-weight-600 { font-weight: 600; }
+			&.font-weight-400 { font-weight: 400; }
+			&.font-spacing-04 { letter-spacing: .4em; }
+			&.has-underscore {
+			margin-bottom: 54px;
+			  &:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				bottom: -37px;
+				transform: translateX(0);
+				height: 2px;
+				width: 100px;
+				border-bottom: 2px solid #00b3cf;
+			  }
+			}
+		}
+	}
+
+	.text-center {
+		h1, h2, h3, h4, h5, p {
+		
+		&.has-underscore {
+			  &:after {
+				left: 50%;
+				transform: translateX(-50%);
+			  }
+			}
+
+		}
+	}
+}
+
+.section-block-content  {
+  
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    font-family: $header-font-family;
+    &.has-underscore{
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #00b3cf;
+      }
+    }
+  }
+
+  
+  h1, .h1 {
+    @include adjust-font-size-to( 38px, 2.625 );
+    margin:0;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+    &.large-h1-heading {
+      @include breakpoint($mobile) { @include adjust-font-size-to( 35px, 2 ); }
+      @include breakpoint($tablet) { @include adjust-font-size-to( 50px, 2 ); }
+      @include breakpoint($desktop) { @include adjust-font-size-to( 75px, 2 ); }
+      @include breakpoint($desktop-wide) { @include adjust-font-size-to( 75px, 2 ); }
+    }
+  }
+  
+  h2, .h2 {
+    @include adjust-font-size-to( 44px, 2.26 );
+    margin:27px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+  }
+  
+  h3, .h3 {
+    @include adjust-font-size-to( 29px, 1.93 );
+    margin:27px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+  &.widget-title {
+    @include adjust-font-size-to( 16px, 1 );
+  }
+  }
+  
+  h4, .h4 {
+    @include adjust-font-size-to( 26px, 1.6 );
+    margin:27px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 0;
+    position: relative;
+  &.widget-title {
+    @include adjust-font-size-to( 16px, 1 );
+  }
+  }
+  
+  h5, .h5 {
+    @include adjust-font-size-to( 18px, 1.35 );
+    margin:27px 0 0 0;
+    font-weight: 600;
+  &.widget-title {
+    @include adjust-font-size-to( 16px, 1 );
+  }
+  &.small {
+    @include adjust-font-size-to( 11px, 1 );
+  }
+  }
+  
+  p {
+    &.large-font {
+      @include breakpoint($mobile) { @include adjust-font-size-to( 16px, 1.73 ); }
+      @include breakpoint($tablet) { @include adjust-font-size-to( 18px, 1.75 ); }
+      @include breakpoint($desktop) { @include adjust-font-size-to( 18px, 1.75 ); }
+    }
+    
+    &.small-font {
+      @include breakpoint($mobile) { @include adjust-font-size-to( 16px, 1.73 ); }
+      @include breakpoint($tablet) { @include adjust-font-size-to( 14px, 1.23 ); }
+      @include breakpoint($desktop) { @include adjust-font-size-to( 14px, 1.23 ); }
+    }
+    
+  }
+  
+  hr.separator-no-padding {
+    margin-top:0;
+    margin-bottom:0;
+    border-color: #eaeaea;
+    border: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    box-sizing: content-box;
+    height: 0;
+    color: #eaeaea;
+  }
+  
+  hr.separator-with-padding {
+    margin: 36px 0px 36px 0px;
+    border-color: #eaeaea;
+    border: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    box-sizing: content-box;
+    height: 0;
+    color: #eaeaea;
+  }
+  
+  hr.separator-with-double-padding {
+    margin: 72px 0px 72px 0px;
+    border-color: #eaeaea;
+    border: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    box-sizing: content-box;
+    height: 0;
+    color: #eaeaea;
+    
+    @include breakpoint($mobile) { margin: 54px 0px 54px 0px; }
+    @include breakpoint($tablet) { margin: 54px 0px 54px 0px; }
+    @include breakpoint($desktop) { margin: 72px 0px 72px 0px; }
+    @include breakpoint($desktop-wide) { margin: 72px 0px 72px 0px; }
+    
+  }
+  
+  hr.separator-with-triple-padding {
+    
+    border-color: #eaeaea;
+    border: 0;
+    border-top-width: 1px;
+    border-style: solid;
+    box-sizing: content-box;
+    height: 0;
+    color: #eaeaea;
+    
+    @include breakpoint($mobile) { margin: 54px 0px 54px 0px; }
+    @include breakpoint($tablet) { margin: 54px 0px 54px 0px; }
+    @include breakpoint($desktop) { margin: 108px 0px 108px 0px; }
+    @include breakpoint($desktop-wide) { margin: 108px 0px 108px 0px; }
+    
+  }
+  
+  blockquote {
+    margin: 27px 0 27px 0;
+    padding: 0 0 0 27px;
+    border-left: 12px solid;
+    border-color: #0cb4ce;
+    p {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+      font-style: italic;
+      @include adjust-font-size-to( 18px, 1.75 );
+        
+        &.large-font {
+        @include breakpoint($mobile) { @include adjust-font-size-to( 24px, 2 ); }
+        @include breakpoint($tablet) { @include adjust-font-size-to( 24px, 2 ); }
+        @include breakpoint($desktop) { @include adjust-font-size-to( 36px, 3 ); }
+        @include breakpoint($desktop-wide) { @include adjust-font-size-to( 36px, 3 ); }
+      }
+      
+    }
+    
+    &.pullquote > p:first-of-type:before {
+      font-family: 'Libre Baskerville', serif;
+      content: open-quote;
+      font-size: 1.5em;
+      line-height: 0;
+      vertical-align: -0.25em;
+      margin-right: .2em;
+    }
+    
+    &.pullquote>p:first-of-type:after {
+      font-family: 'Libre Baskerville', serif;
+      content: close-quote;
+      font-size: 1.5em;
+      line-height: 0;
+      vertical-align: -0.25em;
+      margin-left: .1em;
+    }
+    
+  }
+  
+  
+}
+
+.service-box {
+  p:first-of-type {
+    margin-top: 0 !important;
+
+  }
+}
+
+.scrollslides-step-alt0 {
+  .scrollslides-step-num h1 { color:#04b4cd; font-size: 250px; letter-spacing: -0.01em; opacity: .3; line-height: 95%; font-weight: 700; font-family: $header-font-family; position: absolute; left:36px; top: -60px; }
+  h2 { font-weight: 700; font-family: $header-font-family; letter-spacing: -0.01em; font-size: 70px; line-height: 72px; margin-top:0; }
+  h5 { color:#04b4cd; font-family: 'Hind'; font-weight:400; font-size: 22px; line-height: 35px; text-transform: uppercase; padding-right: 36px; }
+  p  { padding:18px 0; font-family: 'Hind'; margin-top: 34px; font-size: 20px; line-height: 30px; max-width: 540px; position: relative;
+     &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -15px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-top: 2px solid #00B3CF;
+     }
+     &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+        transform: translateX(0);
+        height: 2px;
+        width: 100px;
+        border-bottom: 2px solid #00B3CF;
+     }
+  }
+  
+
+}
+
+.scrollslides-step-alt1 {
+  .scrollslides-step-num h1 { color:#04b4cd; font-size: 250px; letter-spacing: -0.01em; opacity: .3; line-height: 95%; font-weight: 700; font-family: $header-font-family; position: absolute; right:300px; top: -20px; }
+  h2 { font-weight: 700; font-family: $header-font-family; letter-spacing: -0.01em; font-size: 70px; line-height: 72px; margin-top:0; }
+  h5 { color:#04b4cd; font-family: 'Hind'; font-weight:400; font-size: 22px; line-height: 35px; margin-top: 11px; text-transform: uppercase; padding-left: 36px; position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 36px;
+        bottom: -15px;
+        transform: translateX(0);
+        height: 2px;
+        width: 50px;
+        border-bottom: 2px solid #00B3CF;
+     }
+  }
+  p  { padding:18px 0 18px 190px; font-family: 'Hind'; margin-top: 34px; font-size: 20px; line-height: 30px; max-width: 100%; position: relative;
+     &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 2px;
+        width: 100px;
+        border-top: 2px solid #00B3CF;
+     }
+  }
+  
+}
+
+.scrollslides-step-alt2 {
+  .scrollslides-step-num h1 { color:#04b4cd; font-size: 250px; letter-spacing: -0.01em; opacity: .3; line-height: 95%; font-weight: 700; font-family: $header-font-family; position: absolute; right:120px; top: 120px; margin-bottom: 0;}
+  h2 { font-weight: 700; font-family: $header-font-family; letter-spacing: -0.01em; font-size: 70px; line-height: 72px; margin-top:0; }
+  h5 { color:#04b4cd; font-family: 'Hind'; font-weight:400; font-size: 22px; line-height: 35px; text-transform: uppercase; padding-left: 36px; position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 36px;
+        bottom: -15px;
+        transform: translateX(0);
+        height: 2px;
+        width: 50px;
+        border-bottom: 2px solid #00B3CF;
+     }
+  }
+  p  { padding:0 0 0 36px; font-family: 'Hind'; margin-top: 27px; font-size: 20px; line-height: 30px; max-width: 100%; position: relative; }
+  
+
+}
+
+.ismobile {
+
+	.scrollsteps-container {
+		padding:70px 0;
+
+		.scrollslides-step-num { 
+			h1 { color:#04b4cd; font-size: 100px; letter-spacing: -0.01em; opacity: .3; line-height: 95%; font-weight: 700; font-family: $header-font-family; margin-bottom: 0; padding-top: 70px; }
+		}
+
+		.scrollslides-step-heading {
+			h2 { color:#04b4cd; font-family: 'Hind'; font-weight:400; font-size: 16px; line-height: 35px; text-transform: uppercase; }
+		}
+
+		.scrollslides-step-title {
+			h5 { font-weight: 700; font-family: $header-font-family; letter-spacing: -0.01em; font-size: 60px; line-height: 72px; margin-top:0; }
+		}
+
+		.scrollslides-step-content {
+			p { font-size: 14px; line-height: 30px; margin-top:66px; }
+		}
+
+		@include breakpoint($mobile) { 
+			
+			.scrollslides-step-heading { margin-bottom: 20px;
+				h2 { font-size: 14px; line-height: 31px;  }
+			}
+			.scrollslides-step-title > h5 { font-size: 35px; line-height: 40px; }
+			.scrollslides-step-content > p { margin-top: 36px; }
+
+		}
+
+	}
+
+}
+
+.numbered-paragraph {
+    align-items: center;
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 30px 0;
+    width: 100%;
+
+    .numbered-paragraph-numeric {
+        flex: 1;
+
+        p {
+            font-size: 1em;
+            letter-spacing: 0;
+            line-height: 1;
+        }
+    }
+
+    .numbered-paragraph-body {
+        .title {
+            font-family: 'Hind';
+            font-size: 1em;
+        }
+
+        flex: 10;
+        margin-left: 15px;
+    }
+}
+
+.numbered-heading {
+    .numbered-heading-children {
+        padding: 30px 0;
+        width: 100%;
+
+        .numbered-heading-nu {
+            font-family: 'Hind';
+            font-size: 2.2em;
+            line-height: 1.4em;
+            font-weight: 600;
+            color: rgba(255,255,255,0.6);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .numbered-heading-title {
+            margin-top: 16px;
+
+            .title {
+                font-family: 'Hind';
+                font-size: 1.3em;
+
+                &:after {
+                    border-bottom: none !important;
+                }
+            }
+        }
+
+        .numbered-heading-body {
+            p {
+                color: rgba(255,255,255,0.6);
+            }
+        }
+    }
+}
+
+.to-upper {
+    text-transform: uppercase;
+}
+
+.h1--p {
+    font-family: 'Hind' !important;
+    font-size: 1em !important;
+    letter-spacing: .4em !important;
+}
+
+.p--h1 {
+    font-family: "Playfair Display" !important;
+    font-size: 4.6875em !important;
+    line-height: .93867em !important;
+    margin: 18px 0 !important;
+
+    &.has-underscore {
+        margin-bottom: 54px !important;
+        position: relative !important;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -37px;
+            transform: translateX(0);
+            height: 2px;
+            width: 100px;
+            border-bottom: 2px solid #00b3cf;
+        }
+    }
+}

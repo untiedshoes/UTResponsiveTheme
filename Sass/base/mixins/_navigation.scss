@@ -1,0 +1,151 @@
+
+@mixin mobile-nav {
+  display: none;    
+}
+
+
+
+@mixin quickLinks() {
+  .quick-access-links { float: right;
+
+      ul {padding: 0 0 0 0 !important;  }
+      li {@include inline-block(middle); @include adjust-font-size-to( 10px ); width: auto;  margin-bottom:0; line-height: 32px; font-weight: 100;
+        a {color: $top-links-color; padding-right: 7px; margin-left: 5px; border-right: 1px solid $top-links-color; text-transform: uppercase;
+            &:hover { color: #222222 !important;}
+            }
+             &:last-of-type a { padding-right: 0; margin-right: 5px; border-right: none; }
+          }
+     }
+}
+
+@mixin megaMenu($topLevelWidth, $lowerLevelWidth) {
+  ul { 
+    list-style-type: none; padding: 0; margin: 0; z-index: 600; float: right;
+  }
+  a {
+    display: block; background: url(images/nav-divider.png) 100% 5px no-repeat; padding-right: 20px; width: $topLevelWidth; color:$nav-font-color; font-family: $nav-font-family; font-weight: $nav-font-weight; font-style: italic; display: block; @include single-transition(all, 0.5s, ease, 0); 
+      small { @include adjust-font-size-to( 11px); letter-spacing: 0; color: $nav-small-color; text-transform: none; @include leader(0, $nav-font-size ); text-align: center; font-family: $body-font-family !important; font-weight: $nav-font-weight;  }
+    &:hover, &.selected {  }
+    
+  } 
+  li {
+     float: left; position:relative; width: $topLevelWidth; @include adjust-font-size-to( $nav-font-size, 1 ); text-transform: none; margin:0 10px 0 0; padding: 0px 0 0px 10px;
+    &.selected { 
+      a {color: $black !important; }
+    }
+    
+    &.contact a {
+      background: none; padding-right: 0;
+    }
+    
+    &.basket { width: 26px; height: 26px; display: block; text-indent: -9999px; background: url(images/basket.png) 50% 50% no-repeat; position: relative;
+      a { width: 26px; height: 26px; display: block;  
+        } 
+        &:hover {background: url(images/basket-active.png) #fff 50% 50% no-repeat;  }
+        &.basket-contents { position: absolute; left:0; margin-top: 7px; width: 300px; z-index: 600; background: #fff; color: $black; display: none;
+          &.basket-contents-empty { border: 6px solid #666;}
+          &.basket-contents-full  { border: 6px solid #cc0033; }
+        }
+      }
+      
+    .opener { display: none; }
+    
+    &.hasdropdown:hover { 
+      color:$nav-font-hover-color; background: url(images/nav-bg.gif) #b5121b 50% bottom no-repeat;
+      a { color: $white !important; }
+      .dropdown { display: block; background: url(images/sub-nav-bg.gif) #5D5E60 50% bottom no-repeat; width: 30em; left:auto; margin:7px 0 0 -10px; z-index: 600; }
+        }
+    &:hover, &.sfhover { 
+      color:$nav-font-hover-color;
+      a { color: $nav-font-hover-color; }
+      .dropdown { background: url(images/sub-nav-bg.gif) #5D5E60 50% bottom no-repeat; width: 30em; left:auto; margin:7px 0 0 -10px; z-index: 600; }
+      }
+    &:last-of-type { margin-right: 0;}
+      
+  }
+  .children {display: none;}
+  .dropdown { position:absolute; left:-999em; padding:15px 0 20px 0;
+    ul {
+      li { font-size: 100%; margin:0; padding:0;  text-transform: none;  background: none; border: none; white-space:nowrap;
+        a {  @include adjust-font-size-to( $sub-nav-font-size, 1 ); letter-spacing: 0; padding:5px 12px;  font-family: $body-font-family; font-weight: normal; @include leader(.2, $nav-font-size ); @include trailer(0, $nav-font-size );
+          &:hover {color: $black !important;}
+           }
+        }
+    }
+    .col_2 { width: 50%; float: left;}
+    .col_3 li { width: 10em; float: left;}
+    }
+}
+
+@mixin suckerfish($topLevelWidth, $lowerLevelWidth) {
+  ul { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    z-index: 600;
+    
+  }
+  a {
+    display: block; width: $topLevelWidth; color:$nav-font-color; padding: 25px 0;  margin:0; font-family: $nav-font-family; font-weight: $nav-font-weight; display: block;
+    width: $topLevelWidth;
+    &:hover, &.selected { color: $nav-font-hover-color; background: #666666; }
+    span {
+      border-right: 1px solid #fff; padding: 0 20px;
+    }
+    &.home span {
+      padding:0 30px;
+    }
+    &.join span {
+      border-right: none;
+    }
+  }
+  li {
+    float: left;
+    width: auto;
+    margin:0;
+    
+    &:hover, &.sfhover {
+      ul {
+        width: 202px !important;
+        left:auto;
+        ul {
+          left: -999em;
+        }
+      }
+    }
+    li:hover, li.sfhover {
+      ul {
+        left: auto; color: #fff;
+      }
+      
+    }
+    ul {
+      position: absolute;
+      width: 202px !important;
+      left: -999em;
+      border-right: none;
+      ul {
+        margin: -1em 0 0 $lowerLevelWidth;
+      }
+    }
+  }
+  
+  ul.sub {
+    width: 202px !important;
+    li {
+      width: 100%; display: block; padding:0;
+        a {
+          padding: 7px 10px 7px 10px; border-left: none; background: #666666; border-right: none; 
+          &:hover {
+            color: #fff;
+          } 
+        }
+        &:last-child a {
+          @include border-bottom-left-radius($radius); border-right: none;  
+        }
+    }
+  }
+}
+
+

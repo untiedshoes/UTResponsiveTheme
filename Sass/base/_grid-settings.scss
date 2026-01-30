@@ -1,0 +1,62 @@
+
+$fg-width-border-max-width: 64.750em;
+$fg-max-width: $max-width;
+
+$mobileTotalColumns: 4 !default;
+$blockGridElements: 12 !default; // Highest number of block grid elements, Maximum of 24 supported
+
+  .col:before, .cols:before, .col:after, .cols:after {
+    content: "";
+    display: table;
+  }
+
+  .col:after, .cols:after {
+    clear: both;
+  }
+
+// outer wrapper center container
+@mixin outer-container() {
+  @include clearfix;
+  max-width: $fg-max-width;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin outer-container-with-border($borderwidth) {
+  @include clearfix;
+  max-width: $fg-width-border-max-width;
+  border-left:$borderwidth solid #fff;
+  border-right:$borderwidth solid #fff;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+// Fill 100% of parent
+@mixin fill-parent() {
+  width: 100%;
+
+  @if $border-box-sizing == false {
+    @include box-sizing(border-box);
+  }
+}
+
+// Media Queries
+@mixin breakpoint($query) {
+    
+    @if length($query) == 1 {
+      @media screen and (min-width: $query) {
+        @content;
+      }
+    }
+    
+    @else if length($query) == 2 {
+      @media screen and (min-width: nth($query, 1)) and (max-width: nth($query, 2)) {
+        @content;
+      }
+    }
+}
+

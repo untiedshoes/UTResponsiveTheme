@@ -1,0 +1,101 @@
+/*CONTAINER & MAIN CONTAINER */
+  .container        { @include outer-container(); color: $body-text-color !important; }
+  .allow_overflow   { overflow: visible !important; }
+  .mainContainer,
+  .footer,
+  .rowTopMargin     { @include pie-clearfix; }
+  
+  #mainContent { background: $skin-page-bg; z-index: 900; position: relative; padding: 0; overflow: visible; }
+  
+  .page-content { padding-top: 85px;  }
+  .full-width-container {
+  overflow: hidden;
+  *
+  zoom: 1;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*CONTAINER & MAIN CONTAINER */
+
+  .grid_ex { padding: 5px; background: #eee; color: $body-text-color; font-size: $p-font-size-medium; }
+  .grid_in { padding: 5px; background: #ccc; color: $body-text-color; font-size: $p-font-size-medium;  }
+  
+  .panel {  
+      width: 100%; display:inline-block; @include pie-clearfix;
+      > :first-child {
+        margin-top: 0;
+      }
+     > :last-child {
+          margin-bottom: 0;
+        }
+  }
+  
+  .block-panel {  
+      @include trailer(0.3, $p-font-size ); @include leader(0.3, $p-font-size ); width: 100%; display:inline-block; @include pie-clearfix; padding: 24px 13px; @include border-radius($panel-radius);
+      > :first-child {
+        margin-top: 0;
+      }
+     > :last-child {
+          margin-bottom: 0;
+        }
+     
+     &:first-child {  }
+  }
+  
+  .video-panel {  
+      background: $white; @include trailer(1, $p-font-size ); @include leader(0, $p-font-size ); width: 100%; display:inline-block; @include pie-clearfix;
+      > :first-child {
+        margin-top: 0;
+      }
+     > :last-child {
+          margin-bottom: 0;
+        }
+  }
+  
+  .panel-white {  
+      background: $white; @include trailer(1, $p-font-size ); @include leader(0, $p-font-size ); width: 100%; display:inline-block; @include pie-clearfix;
+      > :first-child {
+        margin-top: 0;
+      }
+     > :last-child {
+          margin-bottom: 0;
+        }
+  }
+
+
+/* HEADER & TOP NAV */
+.header             { position: relative; overflow: visible;}
+
+a.to_nav    { 
+      position: absolute;
+      top:30px;
+      right:18px;
+      color: $body-text-color;
+      background: #ccc;
+      text-decoration: none;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 22px;
+      height: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      @include border-radius(2px);
+      @include pie-clearfix;
+}
+
+a.to_nav:hover,
+a.to_nav:focus {
+  color: #000;
+
+}
+
+.wrap {
+  margin: 0 auto !important;
+}
+.wrapper {position: relative;}
+
+
+
+
