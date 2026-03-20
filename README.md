@@ -88,12 +88,28 @@ Migrating to **Dart Sass** is recommended as it is the current standard and does
 ---
 
 ## Usage
+
 The compiled CSS is used within a custom Umbraco theme powering:
 
 👉 https://untiedshoes.co.uk/
 
 ---
 
-## Legacy (Compass Support)
+## Author
+
 Developed and maintained by:
 👉 https://github.com/untiedshoes
+
+---
+
+## Notes
+
+This repository represents part of a broader production system and demonstrates:
+
+- Real-world SCSS architecture  
+- Maintainable frontend design  
+- Practical integration with a CMS (Umbraco)  
+
+---
+
+👉 **“This developer builds real, production-quality frontends”**
